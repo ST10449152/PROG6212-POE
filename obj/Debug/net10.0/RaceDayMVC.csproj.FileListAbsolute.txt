@@ -97,3 +97,4 @@ C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\RaceDayMVC.p
 C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\RaceDayMVC.genruntimeconfig.cache
 C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\ref\RaceDayMVC.dll
 C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\RaceDayMVC.csproj.Up2Date
+C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\RaceDayMVC.sourcelink.json

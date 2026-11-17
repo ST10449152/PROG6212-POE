@@ -1,15 +1,18 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+// Allows the RaceDayMVC to communicate with RaceDayAPI.
+builder.Services.AddHttpClient("RaceDayAPI", client =>
+{
+    client.BaseAddress = new Uri(
+        builder.Configuration["RaceDayAPI:BaseUrl"]!);
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
