@@ -10,7 +10,7 @@ namespace RaceDayMVC.Controllers
 
         public AccountController(IHttpClientFactory httpClientFactory)
         {
-            // Connect to the Part 2 API.
+            // Connect to RaceDayAPI.
             _api = httpClientFactory.CreateClient("RaceDayAPI");
         }
 
@@ -21,7 +21,7 @@ namespace RaceDayMVC.Controllers
             return View();
         }
 
-        // Send registration information to the API.
+        // Send registration details to the API.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
@@ -63,7 +63,7 @@ namespace RaceDayMVC.Controllers
             return View();
         }
 
-        // Send login information to the API.
+        // Send login details to the API.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
@@ -80,9 +80,60 @@ namespace RaceDayMVC.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    TempData["SuccessMessage"] =
-                        "Login request successful.";
+                    // Read the user details returned by the API.
+                    var user = await response.Content
+                        .ReadFromJsonAsync<LoginResponse>();
 
+                    if (user == null)
+                    {
+                        ModelState.AddModelError("",
+                            "Unable to read the login response.");
+
+                        return View(model);
+                    }
+
+                    // Get the API session cookie.
+                    if (!response.Headers.TryGetValues(
+                        "Set-Cookie", out var cookies))
+                    {
+                        ModelState.AddModelError("",
+                            "The API did not return a session cookie.");
+
+                        return View(model);
+                    }
+
+                    var sessionCookie = cookies
+                        .Select(cookie => cookie.Split(';')[0])
+                        .FirstOrDefault(cookie =>
+                            cookie.StartsWith(".AspNetCore.Session=",
+                                StringComparison.Ordinal));
+
+                    if (string.IsNullOrEmpty(sessionCookie))
+                    {
+                        ModelState.AddModelError("",
+                            "The API session cookie was not found.");
+
+                        return View(model);
+                    }
+
+                    // Clear the previous MVC session.
+                    HttpContext.Session.Clear();
+
+                    // Save the logged-in user's details.
+                    HttpContext.Session.SetInt32(
+                        "UserID", user.UserID);
+
+                    HttpContext.Session.SetString(
+                        "FirstName", user.FirstName);
+
+                    HttpContext.Session.SetString(
+                        "Role", user.Role);
+
+                    // Save the API session cookie for later requests.
+                    HttpContext.Session.SetString(
+                        "ApiSessionCookie", sessionCookie);
+
+                    // Redirect to the home page for now.
                     return RedirectToAction("Index", "Home");
                 }
 
