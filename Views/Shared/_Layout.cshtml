@@ -1,12 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Http
 
 @{
-    // Read the logged-in user's details.
     var userId = Context.Session.GetInt32("UserID");
     var firstName = Context.Session.GetString("FirstName");
     var role = Context.Session.GetString("Role");
 
-    // Check whether the user has logged in.
     bool isLoggedIn = userId.HasValue &&
                       !string.IsNullOrEmpty(role) &&
                       !string.IsNullOrEmpty(
@@ -17,7 +15,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0" />
 
@@ -78,7 +75,16 @@
 
                         @if (isLoggedIn)
                         {
-                            <!-- Logged-in user -->
+                            <!-- Profile -->
+                            <li class="nav-item">
+                                <a class="nav-link text-dark"
+                                   asp-controller="Profile"
+                                   asp-action="Index">
+                                    My Profile
+                                </a>
+                            </li>
+
+                            <!-- User details -->
                             <li class="nav-item">
                                 <span class="nav-link text-dark">
                                     Welcome, @firstName (@role)
@@ -122,7 +128,6 @@
                         }
 
                     </ul>
-
                 </div>
             </div>
         </nav>
