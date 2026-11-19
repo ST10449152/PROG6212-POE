@@ -3,6 +3,62 @@
   "WorkspaceRootPath": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\views\\categories\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:views\\categories\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\views\\categories\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:views\\categories\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\views\\categories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:views\\categories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\views\\categories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:views\\categories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\views\\organiser\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:views\\organiser\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\views\\organiser\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:views\\organiser\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\views\\organiser\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:views\\organiser\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\views\\organiser\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:views\\organiser\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\controllers\\organisercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:controllers\\organisercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\models\\categoryformviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:models\\categoryformviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\models\\eventformviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:models\\eventformviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\models\\eventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:models\\eventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\services\\racedayapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:services\\racedayapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\views\\participant\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:views\\participant\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -51,24 +107,12 @@
       "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:models\\categoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\models\\eventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:models\\eventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\views\\organiser\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:views\\organiser\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\controllers\\organisercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:controllers\\organisercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\controllers\\organisercontroller.cs||{3B902123-F8A7-4915-9F01-361F908088D0}",
@@ -107,10 +151,6 @@
       "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\services\\racedayapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:services\\racedayapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|c:\\users\\rudy\\documents\\\u002B\u002Bclassstuff\u002B\u002B\\racedaymvc\\models\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{780111A5-F700-9A85-F5D0-F53BCBCAFAC2}|RaceDayMVC.csproj|solutionrelative:models\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -134,7 +174,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -146,7 +186,137 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Categories\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Categories\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Categories\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Categories\\Delete.cshtml",
+              "ViewState": "AgIAABQAAAAAAAAAAAAcwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-19T21:01:08.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Categories\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Categories\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Categories\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Categories\\Edit.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAcwEMAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-19T21:00:06.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Categories\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Categories\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Categories\\Create.cshtml",
+              "RelativeToolTip": "Views\\Categories\\Create.cshtml",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAcwEMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-19T20:59:28.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Categories\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Categories\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Categories\\Index.cshtml",
+              "RelativeToolTip": "Views\\Categories\\Index.cshtml",
+              "ViewState": "AgIAADoAAAAAAAAAAAAcwGIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-19T20:58:51.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Organiser\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Organiser\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Organiser\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Organiser\\Delete.cshtml",
+              "ViewState": "AgIAABYAAAAAAAAAAAAcwDYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-19T20:57:54.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Organiser\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Organiser\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Organiser\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Organiser\\Edit.cshtml",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAcwH0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-19T20:57:22.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Organiser\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Organiser\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Organiser\\Create.cshtml",
+              "RelativeToolTip": "Views\\Organiser\\Create.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAcwHwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-19T20:56:29.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAAC0BAAAAAAAAAAAcwFUBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T20:54:59.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CategoryFormViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\CategoryFormViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\CategoryFormViewModel.cs",
+              "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\CategoryFormViewModel.cs",
+              "RelativeToolTip": "Models\\CategoryFormViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T20:53:19.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EventFormViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\EventFormViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\EventFormViewModel.cs",
+              "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\EventFormViewModel.cs",
+              "RelativeToolTip": "Models\\EventFormViewModel.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAcwDQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T20:52:27.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\MyResults\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\MyResults\\Index.cshtml",
@@ -154,12 +324,11 @@
               "RelativeToolTip": "Views\\MyResults\\Index.cshtml",
               "ViewState": "AgIAAFsAAAAAAAAAAAAcwIMAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-19T19:26:34.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-19T19:26:34.119Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 16,
               "Title": "MyResultsController.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Controllers\\MyResultsController.cs",
               "RelativeDocumentMoniker": "Controllers\\MyResultsController.cs",
@@ -167,12 +336,11 @@
               "RelativeToolTip": "Controllers\\MyResultsController.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAcwGcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-19T19:25:17.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-19T19:25:17.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 17,
               "Title": "MyResultViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\MyResultViewModel.cs",
               "RelativeDocumentMoniker": "Models\\MyResultViewModel.cs",
@@ -180,12 +348,11 @@
               "RelativeToolTip": "Models\\MyResultViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-19T19:23:55.537Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-19T19:23:55.537Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 18,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\MyEnrolments\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\MyEnrolments\\Index.cshtml",
@@ -193,12 +360,11 @@
               "RelativeToolTip": "Views\\MyEnrolments\\Index.cshtml",
               "ViewState": "AgIAAEQAAAAAAAAAAAAcwFwAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-19T18:55:18.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-19T18:55:18.995Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 21,
               "Title": "MyEnrolmentsController.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Controllers\\MyEnrolmentsController.cs",
               "RelativeDocumentMoniker": "Controllers\\MyEnrolmentsController.cs",
@@ -206,12 +372,11 @@
               "RelativeToolTip": "Controllers\\MyEnrolmentsController.cs",
               "ViewState": "AgIAAGUAAAAAAAAAAAAcwI0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-19T18:54:11.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-19T18:54:11.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 20,
               "Title": "MyEnrolmentViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\MyEnrolmentViewModel.cs",
               "RelativeDocumentMoniker": "Models\\MyEnrolmentViewModel.cs",
@@ -219,12 +384,11 @@
               "RelativeToolTip": "Models\\MyEnrolmentViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-19T18:53:14.45Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-19T18:53:14.45Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 19,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Participant\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Participant\\Details.cshtml",
@@ -232,12 +396,11 @@
               "RelativeToolTip": "Views\\Participant\\Details.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAMQAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-19T14:30:43.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-19T14:30:43.756Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 24,
               "Title": "EventDetailsViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\EventDetailsViewModel.cs",
               "RelativeDocumentMoniker": "Models\\EventDetailsViewModel.cs",
@@ -249,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 25,
               "Title": "CategoryViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\CategoryViewModel.cs",
               "RelativeDocumentMoniker": "Models\\CategoryViewModel.cs",
@@ -267,37 +430,40 @@
               "RelativeDocumentMoniker": "Models\\EventViewModel.cs",
               "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\EventViewModel.cs",
               "RelativeToolTip": "Models\\EventViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-19T11:53:59.837Z"
+              "WhenOpened": "2026-11-19T11:53:59.837Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 9,
               "Title": "OrganiserController.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Controllers\\OrganiserController.cs",
               "RelativeDocumentMoniker": "Controllers\\OrganiserController.cs",
               "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Controllers\\OrganiserController.cs",
               "RelativeToolTip": "Controllers\\OrganiserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACIBAAAAAAAAAAAIwEgBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-19T11:07:52.813Z"
+              "WhenOpened": "2026-11-19T11:07:52.813Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Organiser\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Organiser\\Index.cshtml",
               "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Organiser\\Index.cshtml",
               "RelativeToolTip": "Views\\Organiser\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAcwCcAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAcwJsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-19T11:02:22.057Z"
+              "WhenOpened": "2026-11-19T11:02:22.057Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Participant\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Participant\\Index.cshtml",
@@ -310,7 +476,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 28,
               "Title": "OrganiserController.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Controllers\\OrganiserController.cs",
               "RelativeDocumentMoniker": "Controllers\\OrganiserController.cs",
@@ -322,7 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 22,
               "Title": "ParticipantController.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Controllers\\ParticipantController.cs",
               "RelativeDocumentMoniker": "Controllers\\ParticipantController.cs",
@@ -330,12 +496,11 @@
               "RelativeToolTip": "Controllers\\ParticipantController.cs",
               "ViewState": "AgIAAN0AAAAAAAAAAAAcwAUBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-19T10:58:15.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-19T10:58:15.283Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 29,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Mode\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Mode\\Index.cshtml",
@@ -347,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 23,
               "Title": "ModeController.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Controllers\\ModeController.cs",
               "RelativeDocumentMoniker": "Controllers\\ModeController.cs",
@@ -355,12 +520,11 @@
               "RelativeToolTip": "Controllers\\ModeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAcwCgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-19T10:50:14.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-19T10:50:14.486Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 30,
               "Title": "SessionAuthorizeAttribute.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Filters\\SessionAuthorizeAttribute.cs",
               "RelativeDocumentMoniker": "Filters\\SessionAuthorizeAttribute.cs",
@@ -372,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 31,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Profile\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Profile\\Index.cshtml",
@@ -384,7 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 32,
               "Title": "ProfileController.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Controllers\\ProfileController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
@@ -396,7 +560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 33,
               "Title": "UserProfileViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\UserProfileViewModel.cs",
               "RelativeDocumentMoniker": "Models\\UserProfileViewModel.cs",
@@ -408,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -420,7 +584,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 34,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
@@ -432,7 +596,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 35,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
@@ -444,19 +608,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 13,
               "Title": "RaceDayApiService.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Services\\RaceDayApiService.cs",
               "RelativeDocumentMoniker": "Services\\RaceDayApiService.cs",
               "ToolTip": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Services\\RaceDayApiService.cs",
               "RelativeToolTip": "Services\\RaceDayApiService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAwwCsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-19T08:30:39.996Z"
+              "WhenOpened": "2026-11-19T08:30:39.996Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 37,
               "Title": "LoginResponse.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\LoginResponse.cs",
               "RelativeDocumentMoniker": "Models\\LoginResponse.cs",
@@ -468,7 +633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 27,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
@@ -480,7 +645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 38,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "Models\\LoginViewModel.cs",
@@ -492,7 +657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 39,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Models\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "Models\\RegisterViewModel.cs",
@@ -504,7 +669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 36,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -516,7 +681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 40,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Rudy\\Documents\\\u002B\u002BClassStuff\u002B\u002B\\RaceDayMVC\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",

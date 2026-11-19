@@ -1,26 +1,35 @@
-﻿@{
+﻿@model List<RaceDayMVC.Models.EventViewModel>
+
+@{
     ViewData["Title"] = "Organiser Dashboard";
 }
 
 <div class="container mt-4">
-
     <h1 class="fw-bold">Organiser Dashboard</h1>
 
     <p class="lead text-muted">
-        Welcome to your RaceDay management dashboard.
-        Manage events, participants and race results.
+        Manage your race events, categories, enrolments and results.
     </p>
 
-    <div class="row g-4 mt-3">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
 
+    <div class="row g-4 mt-3">
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                     <h4>My Events</h4>
                     <p>Create and manage your race events.</p>
-                    <span class="text-muted">
-                        Coming soon
-                    </span>
+                    <h2>@Model.Count</h2>
+                    <a asp-controller="Organiser"
+                       asp-action="Create"
+                       class="btn btn-primary mt-auto">
+                        Create New Event
+                    </a>
                 </div>
             </div>
         </div>
@@ -31,7 +40,7 @@
                     <h4>Enrolments</h4>
                     <p>View participants registered for your races.</p>
                     <span class="text-muted">
-                        Coming soon
+                        Coming next
                     </span>
                 </div>
             </div>
@@ -43,11 +52,105 @@
                     <h4>Race Results</h4>
                     <p>Record finishing times and positions.</p>
                     <span class="text-muted">
-                        Coming soon
+                        Coming next
                     </span>
                 </div>
             </div>
         </div>
-
     </div>
+
+    <hr class="my-5" />
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">My Race Events</h2>
+
+        <a asp-controller="Organiser"
+           asp-action="Create"
+           class="btn btn-success">
+            + Create Event
+        </a>
+    </div>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+    else if (Model.Count == 0)
+    {
+        <div class="alert alert-info">
+            You have not created any events yet.
+            Click Create Event to get started.
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var race in Model)
+            {
+                <div class="col-md-6">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h4 class="fw-bold">@race.EventName</h4>
+
+                            <span class="badge bg-primary mb-3">
+                                @race.EventType
+                            </span>
+
+                            <p>
+                                <strong>Date:</strong>
+                                @race.EventDate.ToString("dd MMMM yyyy")
+                            </p>
+
+                            <p>
+                                <strong>Location:</strong>
+                                @race.Location
+                            </p>
+
+                            <p>
+                                <strong>Distance:</strong>
+                                @race.DistanceKM km
+                            </p>
+
+                            <p>
+                                <strong>Venue ID:</strong>
+                                @race.VenueID
+                            </p>
+
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <a asp-controller="Participant"
+                                   asp-action="Details"
+                                   asp-route-id="@race.EventID"
+                                   class="btn btn-outline-primary btn-sm">
+                                    View Details
+                                </a>
+
+                                <a asp-controller="Organiser"
+                                   asp-action="Edit"
+                                   asp-route-id="@race.EventID"
+                                   class="btn btn-warning btn-sm">
+                                    Edit
+                                </a>
+
+                                <a asp-controller="Organiser"
+                                   asp-action="Delete"
+                                   asp-route-id="@race.EventID"
+                                   class="btn btn-danger btn-sm">
+                                    Delete
+                                </a>
+
+                                <a asp-controller="Categories"
+                                   asp-action="Index"
+                                   asp-route-eventId="@race.EventID"
+                                   class="btn btn-success btn-sm">
+                                    Manage Categories
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 </div>
