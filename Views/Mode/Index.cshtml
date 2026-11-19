@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Choose Mode";
+}
+
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">Welcome to RaceDay!</h1>
+
+        <p class="lead text-muted">
+            How would you like to use RaceDay today?
+        </p>
+    </div>
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <div class="row justify-content-center g-4">
+
+        <!-- Participant Mode -->
+        <div class="col-md-5">
+            <div class="card shadow-sm h-100">
+
+                <div class="card-body text-center p-4">
+
+                    <h2 class="mb-3">Participant Mode</h2>
+
+                    <p class="text-muted">
+                        Browse upcoming races, enrol in events,
+                        view your enrolments and check results.
+                    </p>
+
+                    <form asp-controller="Mode"
+                          asp-action="Select"
+                          method="post">
+
+                        @Html.AntiForgeryToken()
+
+                        <input type="hidden"
+                               name="mode"
+                               value="Participant" />
+
+                        <button type="submit"
+                                class="btn btn-primary w-100">
+                            Continue as Participant
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Organiser Mode -->
+        <div class="col-md-5">
+            <div class="card shadow-sm h-100">
+
+                <div class="card-body text-center p-4">
+
+                    <h2 class="mb-3">Organiser Mode</h2>
+
+                    <p class="text-muted">
+                        Create and manage races, organise categories,
+                        view enrolments and publish results.
+                    </p>
+
+                    <form asp-controller="Mode"
+                          asp-action="Select"
+                          method="post">
+
+                        @Html.AntiForgeryToken()
+
+                        <input type="hidden"
+                               name="mode"
+                               value="Organiser" />
+
+                        <button type="submit"
+                                class="btn btn-dark w-100">
+                            Continue as Organiser
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
