@@ -1,4 +1,19 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+
+@{
+    // Read the logged-in user's details.
+    var userId = Context.Session.GetInt32("UserID");
+    var firstName = Context.Session.GetString("FirstName");
+    var role = Context.Session.GetString("Role");
+
+    // Check whether the user has logged in.
+    bool isLoggedIn = userId.HasValue &&
+                      !string.IsNullOrEmpty(role) &&
+                      !string.IsNullOrEmpty(
+                          Context.Session.GetString("ApiSessionCookie"));
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -10,11 +25,9 @@
 
     <script type="importmap"></script>
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet"
           href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-    <!-- Custom CSS -->
     <link rel="stylesheet"
           href="~/css/site.css"
           asp-append-version="true" />
@@ -25,21 +38,19 @@
 </head>
 
 <body>
-
-    <!-- Navigation Bar -->
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
 
             <div class="container-fluid">
 
-                <!-- RaceDay Brand -->
+                <!-- RaceDay brand -->
                 <a class="navbar-brand fw-bold"
                    asp-controller="Home"
                    asp-action="Index">
                     RaceDay
                 </a>
 
-                <!-- Mobile Menu Button -->
+                <!-- Mobile menu -->
                 <button class="navbar-toggler"
                         type="button"
                         data-bs-toggle="collapse"
@@ -51,7 +62,6 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Navigation Links -->
                 <div class="collapse navbar-collapse"
                      id="raceDayNavbar">
 
@@ -66,33 +76,59 @@
                             </a>
                         </li>
 
-                        <!-- Login -->
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-controller="Account"
-                               asp-action="Login">
-                                Login
-                            </a>
-                        </li>
+                        @if (isLoggedIn)
+                        {
+                            <!-- Logged-in user -->
+                            <li class="nav-item">
+                                <span class="nav-link text-dark">
+                                    Welcome, @firstName (@role)
+                                </span>
+                            </li>
 
-                        <!-- Register -->
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-controller="Account"
-                               asp-action="Register">
-                                Register
-                            </a>
-                        </li>
+                            <!-- Logout -->
+                            <li class="nav-item">
+                                <form asp-controller="Account"
+                                      asp-action="Logout"
+                                      method="post">
+
+                                    @Html.AntiForgeryToken()
+
+                                    <button type="submit"
+                                            class="btn btn-link nav-link text-dark">
+                                        Logout
+                                    </button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <!-- Login -->
+                            <li class="nav-item">
+                                <a class="nav-link text-dark"
+                                   asp-controller="Account"
+                                   asp-action="Login">
+                                    Login
+                                </a>
+                            </li>
+
+                            <!-- Register -->
+                            <li class="nav-item">
+                                <a class="nav-link text-dark"
+                                   asp-controller="Account"
+                                   asp-action="Register">
+                                    Register
+                                </a>
+                            </li>
+                        }
 
                     </ul>
 
                 </div>
-
             </div>
         </nav>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main content -->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -115,6 +151,5 @@
             asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
-
 </body>
 </html>
