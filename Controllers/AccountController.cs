@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using RaceDayMVC.Services;
+using Microsoft.AspNetCore.Mvc;
 using RaceDayMVC.Models;
 using System.Net.Http.Json;
 
@@ -7,11 +8,14 @@ namespace RaceDayMVC.Controllers
     public class AccountController : Controller
     {
         private readonly HttpClient _api;
+        private readonly RaceDayApiService _apiService;
 
-        public AccountController(IHttpClientFactory httpClientFactory)
+        public AccountController(
+            IHttpClientFactory httpClientFactory,
+            RaceDayApiService apiService)
         {
-            // Connect to RaceDayAPI.
             _api = httpClientFactory.CreateClient("RaceDayAPI");
+            _apiService = apiService;
         }
 
         // Display the registration page.
@@ -80,7 +84,7 @@ namespace RaceDayMVC.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // Read the user details returned by the API.
+                    // Read user's details returned by the API.
                     var user = await response.Content
                         .ReadFromJsonAsync<LoginResponse>();
 
@@ -116,10 +120,10 @@ namespace RaceDayMVC.Controllers
                         return View(model);
                     }
 
-                    // Clear the previous MVC session.
+                    // Clear the previous session.
                     HttpContext.Session.Clear();
 
-                    // Save the logged-in user's details.
+                    // Save the logged in user's details.
                     HttpContext.Session.SetInt32(
                         "UserID", user.UserID);
 
@@ -129,11 +133,11 @@ namespace RaceDayMVC.Controllers
                     HttpContext.Session.SetString(
                         "Role", user.Role);
 
-                    // Save the API session cookie for later requests.
+                    // Save the API session cookie for later requests down the line.
                     HttpContext.Session.SetString(
                         "ApiSessionCookie", sessionCookie);
 
-                    // Redirect to the home page for now.
+                    // Redirect to the home page for the time being.
                     return RedirectToAction("Index", "Home");
                 }
 
@@ -147,6 +151,37 @@ namespace RaceDayMVC.Controllers
             }
 
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            try
+            {
+                // Ask RaceDayAPI to end the user's API session.
+                using var request = new HttpRequestMessage(
+                    HttpMethod.Post, "api/auth/logout");
+
+                using var response = await _apiService.SendAsync(request);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    ModelState.AddModelError("",
+                        "The API could not confirm logout.");
+                }
+            }
+            catch (HttpRequestException)
+            {
+                // Clear the local session even if the API is unavailable.
+            }
+            finally
+            {
+                // Remove the user's MVC details and API session cookie.
+                HttpContext.Session.Clear();
+            }
+
+            return RedirectToAction("Login", "Account");
         }
     }
 }
