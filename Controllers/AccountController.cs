@@ -79,12 +79,12 @@ namespace RaceDayMVC.Controllers
 
             try
             {
-                var response = await _api.PostAsJsonAsync(
+                using var response = await _api.PostAsJsonAsync(
                     "api/auth/login", model);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // Read user's details returned by the API.
+                    // Read the user's details returned by RaceDayAPI.
                     var user = await response.Content
                         .ReadFromJsonAsync<LoginResponse>();
 
@@ -96,7 +96,7 @@ namespace RaceDayMVC.Controllers
                         return View(model);
                     }
 
-                    // Get the API session cookie.
+                    // Retrieve the API session cookie.
                     if (!response.Headers.TryGetValues(
                         "Set-Cookie", out var cookies))
                     {
@@ -109,7 +109,8 @@ namespace RaceDayMVC.Controllers
                     var sessionCookie = cookies
                         .Select(cookie => cookie.Split(';')[0])
                         .FirstOrDefault(cookie =>
-                            cookie.StartsWith(".AspNetCore.Session=",
+                            cookie.StartsWith(
+                                ".AspNetCore.Session=",
                                 StringComparison.Ordinal));
 
                     if (string.IsNullOrEmpty(sessionCookie))
@@ -120,10 +121,10 @@ namespace RaceDayMVC.Controllers
                         return View(model);
                     }
 
-                    // Clear the previous session.
+                    // Remove details from any previous login.
                     HttpContext.Session.Clear();
 
-                    // Save the logged in user's details.
+                    // Store the user's account information.
                     HttpContext.Session.SetInt32(
                         "UserID", user.UserID);
 
@@ -133,12 +134,32 @@ namespace RaceDayMVC.Controllers
                     HttpContext.Session.SetString(
                         "Role", user.Role);
 
-                    // Save the API session cookie for later requests down the line.
+                    // Store the API cookie for authenticated requests.
                     HttpContext.Session.SetString(
                         "ApiSessionCookie", sessionCookie);
 
-                    // Redirect to the home page for the time being.
-                    return RedirectToAction("Index", "Home");
+                    // Organisers can choose between two interfaces.
+                    if (user.Role == "Organiser")
+                    {
+                        return RedirectToAction("Index", "Mode");
+                    }
+
+                    // Participants go directly to Participant Home.
+                    if (user.Role == "Participant")
+                    {
+                        HttpContext.Session.SetString(
+                            "SelectedMode", "Participant");
+
+                        return RedirectToAction("Index", "Participant");
+                    }
+
+                    // Do not allow an unknown role into the application.
+                    HttpContext.Session.Clear();
+
+                    ModelState.AddModelError("",
+                        "Your account has an unsupported role.");
+
+                    return View(model);
                 }
 
                 ModelState.AddModelError("",
@@ -153,6 +174,7 @@ namespace RaceDayMVC.Controllers
             return View(model);
         }
 
+        // Log out of RaceDayMVC and RaceDayAPI.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -163,21 +185,16 @@ namespace RaceDayMVC.Controllers
                 using var request = new HttpRequestMessage(
                     HttpMethod.Post, "api/auth/logout");
 
-                using var response = await _apiService.SendAsync(request);
-
-                if (!response.IsSuccessStatusCode)
-                {
-                    ModelState.AddModelError("",
-                        "The API could not confirm logout.");
-                }
+                using var response =
+                    await _apiService.SendAsync(request);
             }
             catch (HttpRequestException)
             {
-                // Clear the local session even if the API is unavailable.
+                // Still log out locally if the API is unavailable.
             }
             finally
             {
-                // Remove the user's MVC details and API session cookie.
+                // Clear account details, selected mode and API cookie.
                 HttpContext.Session.Clear();
             }
 

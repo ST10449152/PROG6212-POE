@@ -1,0 +1,132 @@
+﻿@model List<RaceDayMVC.Models.MyResultViewModel>
+
+@{
+    ViewData["Title"] = "My Results";
+}
+
+<div class="container mt-4">
+
+    <h1 class="fw-bold">My Race Results</h1>
+
+    <p class="lead text-muted">
+        View your finishing times, positions and race results.
+    </p>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger mt-4">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+    else if (Model == null || Model.Count == 0)
+    {
+        <div class="alert alert-info mt-4">
+            You do not have any race results yet.
+            Your results will appear here once an organiser
+            has recorded them.
+        </div>
+
+        <a asp-controller="Participant"
+           asp-action="Index"
+           class="btn btn-primary">
+            Browse Upcoming Races
+        </a>
+    }
+    else
+    {
+        <div class="row g-4 mt-3">
+
+            @foreach (var result in Model)
+            {
+                <div class="col-md-6">
+
+                    <div class="card shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <h4 class="card-title fw-bold mb-3">
+                                @result.EventName
+                            </h4>
+
+                            <p>
+                                <strong>Event Date:</strong>
+                                @result.EventDate.ToString("dd MMMM yyyy")
+                            </p>
+
+                            <p>
+                                <strong>Finish Time:</strong>
+
+                                @if (result.FinishTime != null)
+                                {
+                                    @result.FinishTime
+                                }
+                                else
+                                {
+                                    <span class="text-muted">
+                                        Not recorded
+                                    </span>
+                                }
+                            </p>
+
+                            <p>
+                                <strong>Finishing Position:</strong>
+
+                                @if (result.Position != null)
+                                {
+                                    @result.Position
+                                }
+                                else
+                                {
+                                    <span class="text-muted">
+                                        Not recorded
+                                    </span>
+                                }
+                            </p>
+
+                            <p>
+                                <strong>Result Status:</strong>
+
+                                @if (result.ResultStatus == "Finished")
+                                {
+                                    <span class="badge bg-success">
+                                        Finished
+                                    </span>
+                                }
+                                else if (result.ResultStatus == "Disqualified")
+                                {
+                                    <span class="badge bg-danger">
+                                        Disqualified
+                                    </span>
+                                }
+                                else if (result.ResultStatus == "Did Not Finish")
+                                {
+                                    <span class="badge bg-warning text-dark">
+                                        Did Not Finish
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">
+                                        @result.ResultStatus
+                                    </span>
+                                }
+                            </p>
+
+                            <a asp-controller="Participant"
+                               asp-action="Details"
+                               asp-route-id="@result.EventID"
+                               class="btn btn-outline-primary mt-2">
+                                View Race Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    }
+
+</div>

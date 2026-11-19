@@ -1,0 +1,197 @@
+﻿@model RaceDayMVC.Models.EventDetailsViewModel
+
+@{
+    ViewData["Title"] = "Race Details";
+
+    string? role = Context.Session.GetString("Role");
+    bool isParticipant = role == "Participant";
+}
+
+<div class="container mt-4">
+
+    <a asp-controller="Participant"
+       asp-action="Index"
+       class="btn btn-outline-secondary mb-4">
+        Back to Upcoming Races
+    </a>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+    else
+    {
+        <h1 class="fw-bold">
+            @Model.Event.EventName
+        </h1>
+
+        <p class="lead text-muted">
+            @Model.Event.Description
+        </p>
+
+        <span class="badge bg-primary mb-4">
+            @Model.Event.EventType
+        </span>
+
+        <div class="card shadow-sm mb-4">
+
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Event Information</h4>
+            </div>
+
+            <div class="card-body">
+
+                <p>
+                    <strong>Date:</strong>
+                    @Model.Event.EventDate.ToString("dd MMMM yyyy")
+                </p>
+
+                <p>
+                    <strong>Location:</strong>
+                    @Model.Event.Location
+                </p>
+
+                <p>
+                    <strong>Distance:</strong>
+                    @Model.Event.DistanceKM km
+                </p>
+
+                <p>
+                    <strong>Start Time:</strong>
+                    @Model.Event.StartTime.ToString(@"hh\:mm")
+                </p>
+
+                <p>
+                    <strong>End Time:</strong>
+                    @Model.Event.EndTime.ToString(@"hh\:mm")
+                </p>
+
+                @if (!string.IsNullOrWhiteSpace(
+                    Model.RouteDescription))
+                {
+                    <hr />
+
+                    <h5>Route Description</h5>
+                    <p>@Model.RouteDescription</p>
+                }
+
+                @if (!string.IsNullOrWhiteSpace(
+                    Model.RouteMapURL))
+                {
+                    <a href="@Model.RouteMapURL"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn btn-outline-primary">
+                        View Route Map
+                    </a>
+                }
+
+            </div>
+        </div>
+
+        <h2 class="fw-bold mb-4">
+            Available Race Categories
+        </h2>
+
+        @if (ViewBag.CategoryError != null)
+        {
+            <div class="alert alert-warning">
+                @ViewBag.CategoryError
+            </div>
+        }
+        else if (Model.Categories.Count == 0)
+        {
+            <div class="alert alert-info">
+                No categories have been added to this race yet.
+            </div>
+        }
+        else
+        {
+            <div class="row g-4">
+
+                @foreach (var category in Model.Categories)
+                {
+                    <div class="col-md-4">
+
+                        <div class="card shadow-sm h-100">
+
+                            <div class="card-body d-flex flex-column">
+
+                                <h4 class="fw-bold">
+                                    @category.CategoryName
+                                </h4>
+
+                                <p>
+                                    <strong>Distance:</strong>
+                                    @category.DistanceKM km
+                                </p>
+
+                                <p>
+                                    <strong>Maximum Participants:</strong>
+                                    @category.MaxParticipants
+                                </p>
+
+                                <p>
+                                    <strong>Entrance Fee:</strong>
+                                    R @category.EntranceFee.ToString("N2")
+                                </p>
+
+                                @if (isParticipant)
+                                {
+                                    <form asp-controller="Participant"
+                                          asp-action="Enrol"
+                                          method="post"
+                                          class="mt-auto">
+
+                                        @Html.AntiForgeryToken()
+
+                                        <input type="hidden"
+                                               name="eventId"
+                                               value="@Model.Event.EventID" />
+
+                                        <input type="hidden"
+                                               name="categoryId"
+                                               value="@category.CategoryID" />
+
+                                        <button type="submit"
+                                                class="btn btn-primary w-100">
+                                            Enrol Now
+                                        </button>
+
+                                    </form>
+                                }
+                                else
+                                {
+                                    <div class="alert alert-secondary mt-auto mb-0">
+                                        Organisers can view categories,
+                                        but only participants can enrol.
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+        }
+    }
+
+</div>

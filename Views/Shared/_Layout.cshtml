@@ -1,20 +1,51 @@
 ﻿@using Microsoft.AspNetCore.Http
 
 @{
+    // Read the logged-in user's details.
     var userId = Context.Session.GetInt32("UserID");
     var firstName = Context.Session.GetString("FirstName");
     var role = Context.Session.GetString("Role");
+    var selectedMode = Context.Session.GetString("SelectedMode");
 
     bool isLoggedIn = userId.HasValue &&
                       !string.IsNullOrEmpty(role) &&
                       !string.IsNullOrEmpty(
                           Context.Session.GetString("ApiSessionCookie"));
+
+    bool isOrganiser = isLoggedIn && role == "Organiser";
+
+    // Determine where the Home link should lead.
+    string homeController = "Home";
+
+    if (isLoggedIn)
+    {
+        if (isOrganiser)
+        {
+            if (selectedMode == "Participant")
+            {
+                homeController = "Participant";
+            }
+            else if (selectedMode == "Organiser")
+            {
+                homeController = "Organiser";
+            }
+            else
+            {
+                homeController = "Mode";
+            }
+        }
+        else
+        {
+            homeController = "Participant";
+        }
+    }
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0" />
 
@@ -22,9 +53,11 @@
 
     <script type="importmap"></script>
 
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet"
           href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
+    <!-- Custom CSS -->
     <link rel="stylesheet"
           href="~/css/site.css"
           asp-append-version="true" />
@@ -40,14 +73,14 @@
 
             <div class="container-fluid">
 
-                <!-- RaceDay brand -->
+                <!-- RaceDay Brand -->
                 <a class="navbar-brand fw-bold"
-                   asp-controller="Home"
+                   asp-controller="@homeController"
                    asp-action="Index">
                     RaceDay
                 </a>
 
-                <!-- Mobile menu -->
+                <!-- Mobile Menu Button -->
                 <button class="navbar-toggler"
                         type="button"
                         data-bs-toggle="collapse"
@@ -59,6 +92,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <!-- Navigation Links -->
                 <div class="collapse navbar-collapse"
                      id="raceDayNavbar">
 
@@ -67,7 +101,7 @@
                         <!-- Home -->
                         <li class="nav-item">
                             <a class="nav-link text-dark"
-                               asp-controller="Home"
+                               asp-controller="@homeController"
                                asp-action="Index">
                                 Home
                             </a>
@@ -75,7 +109,7 @@
 
                         @if (isLoggedIn)
                         {
-                            <!-- Profile -->
+                            <!-- My Profile -->
                             <li class="nav-item">
                                 <a class="nav-link text-dark"
                                    asp-controller="Profile"
@@ -84,7 +118,19 @@
                                 </a>
                             </li>
 
-                            <!-- User details -->
+                            @if (isOrganiser)
+                            {
+                                <!-- Only Organisers can switch modes -->
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark"
+                                       asp-controller="Mode"
+                                       asp-action="Index">
+                                        Switch Mode
+                                    </a>
+                                </li>
+                            }
+
+                            <!-- Display the user's name and account role -->
                             <li class="nav-item">
                                 <span class="nav-link text-dark">
                                     Welcome, @firstName (@role)
@@ -133,7 +179,7 @@
         </nav>
     </header>
 
-    <!-- Main content -->
+    <!-- Main Content -->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

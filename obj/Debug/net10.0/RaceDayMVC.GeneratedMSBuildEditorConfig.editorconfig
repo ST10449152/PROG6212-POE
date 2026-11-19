@@ -43,8 +43,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Rudy/Documents/++ClassStuff++/RaceDayMVC/Views/MyEnrolments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlFbnJvbG1lbnRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rudy/Documents/++ClassStuff++/RaceDayMVC/Views/MyResults/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlSZXN1bHRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Rudy/Documents/++ClassStuff++/RaceDayMVC/Views/Organiser/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JnYW5pc2VyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rudy/Documents/++ClassStuff++/RaceDayMVC/Views/Participant/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGljaXBhbnRcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Rudy/Documents/++ClassStuff++/RaceDayMVC/Views/Participant/Index.cshtml]
