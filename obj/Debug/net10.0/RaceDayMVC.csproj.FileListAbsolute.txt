@@ -21,7 +21,6 @@ C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\rjsmcshtml.d
 C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\scopedcss\bundle\RaceDayMVC.styles.css
 C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\scopedcss\projectbundle\RaceDayMVC.bundle.scp.css
-C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\compressed\mpaeppi5z8-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\compressed\y0618ptxeb-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\compressed\djym5d64cy-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\compressed\ov2eml1qjd-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -98,3 +97,4 @@ C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\RaceDayMVC.g
 C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\ref\RaceDayMVC.dll
 C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\RaceDayMVC.csproj.Up2Date
 C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\RaceDayMVC.sourcelink.json
+C:\Users\Rudy\Documents\++ClassStuff++\RaceDayMVC\obj\Debug\net10.0\compressed\mpaeppi5z8-{0}-bcx4dabtfm-bcx4dabtfm.gz

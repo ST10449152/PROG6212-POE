@@ -1,0 +1,11 @@
+﻿**/bin/
+**/obj/
+.vs/
+.git/
+.gitignore
+Dockerfile
+.dockerignore
+*.user
+*.suo
+*.slnx
+appsettings.Development.json
