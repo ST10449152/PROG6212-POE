@@ -1,0 +1,109 @@
+﻿@model RaceDayMVC.Models.RaceResultFormViewModel
+
+@{
+    bool isEditing = Model.ResultsID > 0;
+
+    ViewData["Title"] = isEditing
+        ? "Edit Race Result"
+        : "Record Race Result";
+
+    string actionName = isEditing
+        ? "EditResult"
+        : "CreateResult";
+}
+
+<div class="container mt-4">
+
+    <h1 class="fw-bold">
+        @(isEditing ? "Edit Race Result" : "Record Race Result")
+    </h1>
+
+    <p class="lead text-muted">
+        Enrolment ID: @Model.EnrollmentID
+    </p>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <form asp-controller="OrganiserEnrolments"
+                  asp-action="@actionName"
+                  method="post">
+
+                @Html.AntiForgeryToken()
+
+                <input asp-for="ResultsID" type="hidden" />
+                <input asp-for="EnrollmentID" type="hidden" />
+                <input asp-for="EventID" type="hidden" />
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="ResultStatus"
+                           class="form-label"></label>
+
+                    <select asp-for="ResultStatus"
+                            class="form-select">
+                        <option value="Finished">Finished</option>
+                        <option value="Did Not Finish">Did Not Finish</option>
+                        <option value="Disqualified">Disqualified</option>
+                    </select>
+
+                    <span asp-validation-for="ResultStatus"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="FinishTime"
+                           class="form-label"></label>
+
+                    <input asp-for="FinishTime"
+                           type="text"
+                           class="form-control"
+                           placeholder="01:25:30" />
+
+                    <div class="form-text">
+                        Example: 01:25:30 means 1 hour,
+                        25 minutes and 30 seconds.
+                        Leave blank for disqualified participants
+                        or those who did not finish.
+                    </div>
+
+                    <span asp-validation-for="FinishTime"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Position"
+                           class="form-label"></label>
+
+                    <input asp-for="Position"
+                           type="number"
+                           min="1"
+                           class="form-control"
+                           placeholder="1" />
+
+                    <span asp-validation-for="Position"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2">
+                    <button type="submit" class="btn btn-success">
+                        @(isEditing ? "Save Changes" : "Record Result")
+                    </button>
+
+                    <a asp-controller="OrganiserEnrolments"
+                       asp-action="Index"
+                       asp-route-eventId="@Model.EventID"
+                       class="btn btn-secondary">
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -4,6 +4,7 @@ using RaceDayMVC.Models;
 using RaceDayMVC.Services;
 using System.Net;
 using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace RaceDayMVC.Controllers
 {
@@ -20,43 +21,26 @@ namespace RaceDayMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            // Check whether the MVC user is logged in.
-            int? userId = HttpContext.Session.GetInt32("UserID");
-
-            if (userId == null)
-            {
+            if (HttpContext.Session.GetInt32("UserID") == null)
                 return RedirectToAction("Login", "Account");
-            }
 
             try
             {
-                // Request the user's profile from RaceDayAPI.
                 using var request = new HttpRequestMessage(
                     HttpMethod.Get, "api/users/me");
 
-                using var response =
-                    await _apiService.SendAsync(request);
+                using var response = await _apiService.SendAsync(request);
 
-                // The API session is no longer valid.
                 if (response.StatusCode == HttpStatusCode.Unauthorized)
-                {
-                    HttpContext.Session.Clear();
-
-                    TempData["SuccessMessage"] =
-                        "Your session has expired. Please log in again.";
-
-                    return RedirectToAction("Login", "Account");
-                }
+                    return SessionExpired();
 
                 if (!response.IsSuccessStatusCode)
                 {
                     ViewBag.ErrorMessage =
                         "Unable to load your profile.";
-
                     return View(null);
                 }
 
-                // Read the profile returned by the API.
                 var profile = await response.Content
                     .ReadFromJsonAsync<UserProfileViewModel>();
 
@@ -64,19 +48,138 @@ namespace RaceDayMVC.Controllers
                 {
                     ViewBag.ErrorMessage =
                         "The API returned an empty profile.";
-
                     return View(null);
                 }
 
                 return View(profile);
             }
-            catch (HttpRequestException)
+            catch (Exception ex) when (
+                ex is HttpRequestException ||
+                ex is JsonException ||
+                ex is TaskCanceledException)
             {
                 ViewBag.ErrorMessage =
                     "Unable to connect to RaceDayAPI.";
-
                 return View(null);
             }
+        }
+
+        // Display the Edit Profile form.
+        [HttpGet]
+        public async Task<IActionResult> Edit()
+        {
+            if (HttpContext.Session.GetInt32("UserID") == null)
+                return RedirectToAction("Login", "Account");
+
+            try
+            {
+                using var request = new HttpRequestMessage(
+                    HttpMethod.Get, "api/users/me");
+
+                using var response = await _apiService.SendAsync(request);
+
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                    return SessionExpired();
+
+                if (!response.IsSuccessStatusCode)
+                    return StatusCode(502,
+                        "Unable to load your profile.");
+
+                var profile = await response.Content
+                    .ReadFromJsonAsync<UserProfileViewModel>();
+
+                if (profile == null)
+                    return NotFound("Profile information is unavailable.");
+
+                var model = new EditProfileViewModel
+                {
+                    FirstName = profile.FirstName,
+                    LastName = profile.LastName,
+                    Email = profile.Email
+                };
+
+                return View(model);
+            }
+            catch (Exception ex) when (
+                ex is HttpRequestException ||
+                ex is JsonException ||
+                ex is TaskCanceledException)
+            {
+                return StatusCode(502,
+                    "Unable to connect to RaceDayAPI.");
+            }
+        }
+
+        // Save updated profile details through RaceDayAPI.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(EditProfileViewModel model)
+        {
+            if (HttpContext.Session.GetInt32("UserID") == null)
+                return RedirectToAction("Login", "Account");
+
+            if (!ModelState.IsValid)
+                return View(model);
+
+            try
+            {
+                using var request = new HttpRequestMessage(
+                    HttpMethod.Put, "api/users/me");
+
+                request.Content = JsonContent.Create(new
+                {
+                    model.FirstName,
+                    model.LastName,
+                    model.Email
+                });
+
+                using var response = await _apiService.SendAsync(request);
+
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                    return SessionExpired();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Update the name displayed in the navigation bar.
+                    HttpContext.Session.SetString(
+                        "FirstName", model.FirstName);
+
+                    TempData["SuccessMessage"] =
+                        "Your profile was updated successfully.";
+
+                    return RedirectToAction(nameof(Index));
+                }
+
+                string errorMessage =
+                    await response.Content.ReadAsStringAsync();
+
+                ModelState.AddModelError(
+                    "",
+                    string.IsNullOrWhiteSpace(errorMessage)
+                        ? "Unable to update your profile."
+                        : errorMessage);
+            }
+            catch (Exception ex) when (
+                ex is HttpRequestException ||
+                ex is JsonException ||
+                ex is TaskCanceledException)
+            {
+                ModelState.AddModelError(
+                    "", "Unable to connect to RaceDayAPI.");
+            }
+
+            return View(model);
+        }
+
+        // Clear an expired session and redirect to login.
+        private IActionResult SessionExpired()
+        {
+            HttpContext.Session.Clear();
+
+            TempData["SuccessMessage"] =
+                "Your session has expired. Please log in again.";
+
+            return RedirectToAction("Login", "Account");
         }
     }
 }

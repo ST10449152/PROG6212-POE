@@ -1,0 +1,155 @@
+﻿@model List<RaceDayMVC.Models.OrganiserEnrolmentViewModel>
+
+@{
+    ViewData["Title"] = "Event Enrolments";
+    int eventId = ViewBag.EventID;
+    string eventName = ViewBag.EventName ?? "Race Event";
+    int recordedResults = Model.Count(e => e.ResultsID != null);
+}
+
+<div class="container mt-4">
+
+    <h1 class="fw-bold">Event Enrolments</h1>
+
+    <p class="lead text-muted">@eventName</p>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <div class="row g-3 mb-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5>Total Enrolments</h5>
+                    <h2 class="fw-bold">@Model.Count</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5>Recorded Results</h5>
+                    <h2 class="fw-bold">@recordedResults</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a asp-controller="Organiser"
+       asp-action="Index"
+       class="btn btn-secondary mb-4">
+        Back to Dashboard
+    </a>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+    else if (Model.Count == 0)
+    {
+        <div class="alert alert-info">
+            No participants have enrolled in this event yet.
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Enrolment ID</th>
+                        <th>Participant ID</th>
+                        <th>Category</th>
+                        <th>Enrolled On</th>
+                        <th>Status</th>
+                        <th>Result</th>
+                        <th>Position</th>
+                        <th>Finish Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.EnrollmentID</td>
+                            <td>@item.ParticipantID</td>
+                            <td>@item.CategoryName</td>
+
+                            <td>
+                                @item.EnrollmentDate.ToString("dd MMM yyyy")
+                            </td>
+
+                            <td>
+                                @if (item.Status == "Confirmed")
+                                {
+                                    <span class="badge bg-success">
+                                        Confirmed
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">
+                                        @item.Status
+                                    </span>
+                                }
+                            </td>
+
+                            <td>
+                                @if (item.ResultsID != null)
+                                {
+                                    @item.ResultStatus
+                                }
+                                else
+                                {
+                                    <span class="text-muted">
+                                        Not recorded
+                                    </span>
+                                }
+                            </td>
+
+                            <td>
+                                @(item.Position?.ToString() ?? "-")
+                            </td>
+
+                            <td>
+                                @(item.FinishTime?.ToString(@"hh\:mm\:ss") ?? "-")
+                            </td>
+
+                            <td>
+                                @if (item.ResultsID == null)
+                                {
+                                    <a asp-controller="OrganiserEnrolments"
+                                       asp-action="CreateResult"
+                                       asp-route-eventId="@eventId"
+                                       asp-route-enrollmentId="@item.EnrollmentID"
+                                       class="btn btn-success btn-sm">
+                                        Record Result
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a asp-controller="OrganiserEnrolments"
+                                       asp-action="EditResult"
+                                       asp-route-eventId="@eventId"
+                                       asp-route-id="@item.ResultsID"
+                                       class="btn btn-warning btn-sm">
+                                        Edit Result
+                                    </a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

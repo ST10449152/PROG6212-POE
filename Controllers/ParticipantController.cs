@@ -19,12 +19,20 @@ namespace RaceDayMVC.Controllers
             _apiService = apiService;
         }
 
-        // GET: /Participant
+        // Display upcoming races with optional filters.
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(
+            string? search,
+            string? eventType,
+            string? location)
         {
             List<EventViewModel> upcomingEvents =
                 new List<EventViewModel>();
+
+            // Keep the entered filters when the page reloads.
+            ViewBag.Search = search;
+            ViewBag.EventType = eventType;
+            ViewBag.Location = location;
 
             try
             {
@@ -47,8 +55,38 @@ namespace RaceDayMVC.Controllers
 
                     if (events != null)
                     {
-                        upcomingEvents = events
-                            .Where(e => e.EventDate.Date >= DateTime.Today)
+                        // Show only today's and future events.
+                        var filteredEvents = events
+                            .Where(e => e.EventDate.Date >= DateTime.Today);
+
+                        // Filter by event name.
+                        if (!string.IsNullOrWhiteSpace(search))
+                        {
+                            filteredEvents = filteredEvents.Where(e =>
+                                e.EventName.Contains(
+                                    search,
+                                    StringComparison.OrdinalIgnoreCase));
+                        }
+
+                        // Filter by event type.
+                        if (!string.IsNullOrWhiteSpace(eventType))
+                        {
+                            filteredEvents = filteredEvents.Where(e =>
+                                e.EventType.Equals(
+                                    eventType,
+                                    StringComparison.OrdinalIgnoreCase));
+                        }
+
+                        // Filter by location.
+                        if (!string.IsNullOrWhiteSpace(location))
+                        {
+                            filteredEvents = filteredEvents.Where(e =>
+                                e.Location.Contains(
+                                    location,
+                                    StringComparison.OrdinalIgnoreCase));
+                        }
+
+                        upcomingEvents = filteredEvents
                             .OrderBy(e => e.EventDate)
                             .ToList();
                     }
@@ -68,6 +106,11 @@ namespace RaceDayMVC.Controllers
             {
                 ViewBag.ErrorMessage =
                     "Unable to read race information.";
+            }
+            catch (TaskCanceledException)
+            {
+                ViewBag.ErrorMessage =
+                    "The request took too long. Please try again.";
             }
 
             return View(upcomingEvents);
@@ -168,6 +211,11 @@ namespace RaceDayMVC.Controllers
                 ViewBag.ErrorMessage =
                     "Unable to read the race details.";
             }
+            catch (TaskCanceledException)
+            {
+                ViewBag.ErrorMessage =
+                    "The request took too long. Please try again.";
+            }
 
             return View(model);
         }
@@ -199,7 +247,6 @@ namespace RaceDayMVC.Controllers
                     HttpMethod.Post,
                     $"api/events/{eventId}/enrolments");
 
-                // Send the category ID expected by RaceDayAPI.
                 request.Content = JsonContent.Create(new
                 {
                     CategoryID = categoryId
@@ -221,7 +268,6 @@ namespace RaceDayMVC.Controllers
                 }
                 else
                 {
-                    // Show the validation message from RaceDayAPI.
                     string error = await response.Content
                         .ReadAsStringAsync();
 
@@ -243,6 +289,11 @@ namespace RaceDayMVC.Controllers
             {
                 TempData["ErrorMessage"] =
                     "Unable to connect to RaceDayAPI.";
+            }
+            catch (TaskCanceledException)
+            {
+                TempData["ErrorMessage"] =
+                    "The request took too long. Please try again.";
             }
 
             return RedirectToAction("Details",

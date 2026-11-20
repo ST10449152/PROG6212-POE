@@ -8,6 +8,13 @@
 
     <h2 class="mb-4">My RaceDay Profile</h2>
 
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
     @if (Model == null)
     {
         <div class="alert alert-danger">
@@ -53,6 +60,12 @@
                     <strong>Account Created:</strong>
                     @Model.CreatedAt.ToString("dd MMMM yyyy")
                 </p>
+
+                <a asp-controller="Profile"
+                   asp-action="Edit"
+                   class="btn btn-warning mt-3">
+                    Edit Profile
+                </a>
 
             </div>
         </div>
