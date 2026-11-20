@@ -19,6 +19,13 @@
         </div>
     }
 
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
     <div class="row g-4 mt-3">
 
         <div class="col-md-4">
@@ -43,7 +50,6 @@
                 <div class="card-body">
                     <h4>Enrolments</h4>
                     <p>View participants registered for your races.</p>
-
                     <span class="text-muted">
                         Select an event below to view enrolments.
                     </span>
@@ -56,7 +62,6 @@
                 <div class="card-body">
                     <h4>Race Results</h4>
                     <p>Record finishing times and positions.</p>
-
                     <span class="text-muted">
                         Select an event below to manage results.
                     </span>
@@ -103,14 +108,19 @@
 
                     <div class="card shadow-sm h-100">
 
+                        <img src="@Url.Action("EventBanner", "Image", new { eventId = race.EventID })"
+                             alt="Banner for @race.EventName"
+                             class="card-img-top"
+                             style="height:200px;object-fit:cover;"
+                             onerror="this.style.display='none';" />
+
                         <div class="card-body d-flex flex-column">
 
                             <h4 class="fw-bold">
                                 @race.EventName
                             </h4>
 
-                            <span class="badge bg-primary
-                                         align-self-start mb-3">
+                            <span class="badge bg-primary align-self-start mb-3">
                                 @race.EventType
                             </span>
 
@@ -133,6 +143,40 @@
                                 <strong>Venue ID:</strong>
                                 @race.VenueID
                             </p>
+
+                            <hr />
+
+                            <h5>Event Banner</h5>
+
+                            <form asp-controller="Image"
+                                  asp-action="UploadEventBanner"
+                                  method="post"
+                                  enctype="multipart/form-data"
+                                  class="mb-3">
+
+                                @Html.AntiForgeryToken()
+
+                                <input type="hidden"
+                                       name="eventId"
+                                       value="@race.EventID" />
+
+                                <div class="mb-2">
+                                    <input type="file"
+                                           name="image"
+                                           accept=".jpg,.jpeg,.png,.webp"
+                                           class="form-control"
+                                           required />
+                                </div>
+
+                                <button type="submit"
+                                        class="btn btn-outline-primary btn-sm">
+                                    Upload Banner
+                                </button>
+
+                                <small class="text-muted d-block mt-2">
+                                    JPG, PNG or WEBP. Maximum 5 MB.
+                                </small>
+                            </form>
 
                             <div class="d-flex flex-wrap gap-2 mt-auto">
 
